@@ -1,0 +1,39 @@
+package chapter05;
+
+import java.nio.channels.NonWritableChannelException;
+
+public class Array_Definition_Ex01 {
+	public static void main(String[] args) {
+		/*
+		 * 배열 변수 선언 방법
+		 *  - 배열은 하나의 배열 변수에 많은 데이터를 저장. 
+		 *  - 배열은 선언시 동일한 자료형의 값을 저장 (컬랙션은 여러 데이터 타입을 저장)
+		 *  - 배열은 배열의 값을 저장할 방 크기를 지정하면 방 크기르 수정할 수 없다. 
+		 *  	(컬렉션은 방크기가 자동으로 늘어난다.)
+		 */
+		
+		//배열 선언 방법 1 : 자료형 뒤에 대괄호로 할당
+		
+		int[] array1 = new int[3];		// 배열을 선언과 동시에 방크기를 할당하는 방법
+		
+		int[] array2;					//배열에 변수를 선언
+		array2 = new int[3];			//배열변수릐 방크기를 지정
+		
+		//배열 변수 선언 방법 2 : 변수명 뒤에 대괄호로 할당
+		int array3[] = new int[3];		//배열을 선언과 동시에 방크기를 할당
+		
+		int array4[];
+		array4 = new int[3];
+		
+		
+		//다양한 배열 선언 (기본 자료형 배열, 참조 자료형 배열)
+		boolean[] array5 = new boolean [3];	//boolean값만 담을 수 있음
+		int[] array6 = new int [5];
+		double[] array7 = new double[7];
+		String[] array8 = new String[9];
+		
+		
+ 		
+	}
+
+}
