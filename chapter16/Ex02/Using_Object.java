@@ -1,4 +1,4 @@
-package chapter16.Ex02;import book.chapter15.Ex14.NewRunnableTerminated;
+package chapter16.Ex02;
 
  
 // Object는 모든 객체를 저장할 수 있다.
@@ -15,6 +15,9 @@ class Apple{	//사과 클래스 ,  사과의 정보를 담은 객체
 	Apple(String name, int price){
 		this.name = name;
 		this.price = price;
+	}
+	public void abc() {
+		System.out.println("abc() 메서드 출력");
 	}
 	@Override
 	public String toString() {		/// apple 객체 자체를 출력시 객체의 주소가 나오므로 필드의 값이 나오도록 toString()
@@ -53,8 +56,10 @@ public class Using_Object {
 		// 1. Apple을 저장 후 출력 Object
 		Goods goods1 = new Goods();
 		goods1.setObject(new Apple("사과3", 4000));	//Setter로 값을 할당
-		System.out.println((Apple)goods1.getObject()); 	
-			// Getter로 객체를 출력 : Object타입의 객체를 받아 오기 때문에 Apple로 다운캐스팅 필요
+		System.out.println((Apple)goods1.getObject());	// Getter로 객체를 출력 : Object타입의 객체를 받아 오기 때문에 Apple로 다운캐스팅 필요
+		((Apple)goods1.getObject()).abc(); //abc()메서드를 활용하려면 -> 다운캐스팅, 	
+			// toString()은 Object의 toStirng()을 오버라이딩해 온 거기 때문에 다운캐스팅안해도 출력됐던거임 근데 답 나오더라도 다운캐스팅 꼭 해!!!
+			
 		
 		// 2. Pencil을 저장후 출력. Object
 		Goods goods2 = new Goods();
