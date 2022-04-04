@@ -1,10 +1,5 @@
 package chapter16.Ex13;
 
-import javax.security.auth.x500.X500Principal;
-
-import book.P265;
-import book.P_147;
-import kosmo_peb.Print;
 
 // 두 점의 좌표값을 사용해서 넓이를 구하는 프로그램을 작성하세요. 제너릭 메서드를 사용
 

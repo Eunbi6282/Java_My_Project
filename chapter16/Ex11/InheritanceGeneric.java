@@ -1,6 +1,5 @@
 package chapter16.Ex11;
 
-import java.io.ObjectInputStream.GetField;
 
 // 제너릭 클래스의 상속 :자식 클래스는 부모 클래스의 제너릭 변수 (T,V,T,E)와 같거나 더 많아야 한다.
 class Parent<T>{
