@@ -125,7 +125,6 @@ public class Ex_MemberArrayList {
 		//특정 id를 가진 사용자 제거
 		memberArrayList.removeMember(3344);
 		
-		
 	}
 
 }

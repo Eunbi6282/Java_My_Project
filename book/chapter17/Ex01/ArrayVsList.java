@@ -70,7 +70,8 @@ public class ArrayVsList {
 		}
 		System.out.println();
 		 	// (2) 객체에 toString()을 호출해서 출력
-		System.out.println(aList);
+		System.out.println(aList); // List는 toString()이 재정의 되어있어 객체이름으로 바로 값 출력 가능
+		System.out.println(Arrays.toString(array)); //-> 배열의 경우 Arrays.toString()으로 값을 호출해야 함
 	}
 
 }
