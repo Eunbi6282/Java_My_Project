@@ -67,7 +67,7 @@ class MemberArrayList{
 			//member가 Member타입임!!!! ->
 			int temid = member.getMemberid(); // Member객체 안에 있는 memberid값을 get으로 불러옴
 			
-			if (member == temid) {
+			if (temid == memberid) {
 				arrayList.remove(i);  // 만약 인풋받은 int가 방을 돌면서 찾은 memberid와 같다면 그 방을 삭제해라
 				System.out.println("회원님의 " + memberid +"는 삭제되었습니다.");
 				return true;
