@@ -54,17 +54,48 @@ public class FuctionToLamdaExpression {
 			};
 			b1.method2(0);
 			
-			// (2) 람다식
+			// (2) 람다식 (생략가능한 것은 가능한 생략해서 출력)
 			B b2 = (int a) -> {System.out.println("메서드2_2 - 람다식 : " + a);}; //전체구문
-			B b3 = (a) -> {System.out.println("메서드2_3 - 람다식 : " + a); }; //축약구문 -> 입력매개변수 타입 생략가능
+			B b3 = (a) -> {System.out.println("메서드2_3 - 람다식 : " + a); }; //축약구문 -> input타입 생략 가능(B인터페이스에 모두 정의해 뒀기 때문)
 			B b4 = (a) -> System.out.println("메서드2_4 - 람다식 : " + a);  //축약구문 -> 실행문이 한라인(; 하나일 때)일 때 중괄호 생략 가능
 			B b5 = a -> System.out.println("메서드2_5 - 람다식 : " + a);  //축약구문 -> 입력매개변수가 하나일 때 소괄호 생략 가능
 			b2.method2(1);
 			b3.method2(5);
 			b4.method2(6);
 			b5.method2(7);
+			
+		//3. 입력X, 리턴O
+			// (1) 익명 이너클래스
+			C c1 = new C() {
+				@Override
+				public int method3() {
+					return 4;
+				}
+			};
+			System.out.println("돌려 받은 값은 : " + c1.method3());
 		
-		
+			// (2) 람다식으로 표현
+			C c2 = () -> {return 5;};   // 전체 구문
+			C c3 = () -> 6;   // 축약 구문 -> return이 한 라인으로 적용된 경우 : return생략 가능 !!!반드시 중괄호와 함께 생략 해야 함!!!
+			System.out.println("돌려 받은 값은 : " + c2.method3());
+			System.out.println("돌려 받은 값은 : " + c3.method3());
+			
+		//4. 입력O, 리턴O
+			// (1) 익명 이너클래스
+			D d1 = new D() {
+				@Override
+				public double method4(int a, int b) {
+					return a + b;
+				}
+			};
+			System.out.println("두 수의 합은 : " + d1.method4(1, 2));
+			
+			// (2) 람다식
+			D d2 = (int a, int b) -> {return a + b;};  // 전체표현
+			D d3 = ( a,  b) -> {return a + b;};  //축약구문 -> input타입 생략 가능(D인터페이스에 모두 정의해 뒀기 때문)
+			D d4 = ( a,  b) ->  a + b;  // 축약구문 -> return이 한 라인으로 적용된 경우 : return생략 가능 !!!반드시 중괄호와 함께 생략 해야 함!!!
+			System.out.println("두 수의 합은 : " + d2.method4(3, 4));
+			
 		
 		
 
