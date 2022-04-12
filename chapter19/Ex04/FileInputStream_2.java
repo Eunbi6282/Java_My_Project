@@ -65,6 +65,7 @@ public class FileInputStream_2 {
 						//is2.read() : 1byte씩 읽는다.  //한글처리 못한다. 
 						//is2.read(byteArray1) : 9byte씩 읽는다.  byteArray1에 저장
 						//count1 : 9 , 9, 2 
+				//count1 : 배열갯수
 				for (int i = 0; i < count1; i++) {
 					System.out.print((char)byteArray1[i]);
 				}
