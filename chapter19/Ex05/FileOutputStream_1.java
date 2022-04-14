@@ -53,7 +53,7 @@ public class FileOutputStream_1 {
 		// 3. n-byte 단위쓰기 (byte[]의 offset부터 length의 byte데이터 쓰기
 		OutputStream os3 = new FileOutputStream(outfile,true); 
 		byte[] byteArray2 = "Better The Last Smile Than the First Laughter".getBytes();  //
-		os3.write(byteArray2,7,8);  // write일때는 7byte뒤에서 8읽어서 저장
+		os3.write(byteArray2,7,14);  // write일때는 7byte뒤에서 8읽어서 저장
 									// read 일때는 반대로처리
 		
 		os3.flush();

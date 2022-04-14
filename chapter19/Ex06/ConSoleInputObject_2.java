@@ -38,8 +38,8 @@ public class ConSoleInputObject_2 {
 		
 		for (int i = 0; i < count1; i++) {
 			System.out.print((char)byteArray1[i]);
-			System.out.println(" : count = " + count1); // \r\n이 배열 내부에 있어서 2byte가 더 출력 됨
 		}
+		System.out.println(" : count = " + count1); // \r\n이 배열 내부에 있어서 2byte가 더 출력 됨
 		
 		System.out.println("======================");
 		
