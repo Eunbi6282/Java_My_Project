@@ -7,6 +7,7 @@ public class MovieT {
 	private String genre;
 	
 	public MovieT(String movieName, String director, int grade, String genre) {
+		super();
 		this.movieName = movieName;
 		this.director = director;
 		this.grade = grade;

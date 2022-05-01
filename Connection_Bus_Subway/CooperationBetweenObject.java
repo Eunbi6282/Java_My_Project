@@ -38,11 +38,12 @@ class Student{
 
 
 	public void takeBus(Bus bus) {	// 학생이 버스에 탔을 때?  버스에 돈을 지불해야 한다. 
-		bus.take(1000);//1000원이 마이너스 됨
+		bus.take(1000);
+		this.money -= 1000; //1000원이 마이너스 됨
 	}
 	
 	public void takeOutBus(Bus bus) {	// 버스에서 내림 =? 벗
-		//bus.takeout();
+		bus.takeOut();
 	}
 	
 	public void takeSubway(Subway subway) {
@@ -88,16 +89,12 @@ class Bus{
 	public void take(int money) {		//  버스의 수입을 처리, 승객수 처리
 		// 이 money는 버스의 수입,승객을 높여줌
 		this.money += money ;
-		passenagerCount++;
+		this.passenagerCount += 1;
 	}
 	public void takeOut(){	// 승객수만 감소
-		passenagerCount--;
+		this.passenagerCount -= 1;
 	}
 	
-	@Override
-	public String toString() {
-		return 
-	}
 }
 
 class Subway{

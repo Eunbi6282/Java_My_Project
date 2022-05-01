@@ -42,7 +42,7 @@ class Student{
 		subway.takeOff();
 	}
 	public void studentInfo() {
-		System.out.println(studentName + "님의 남은 돈은 " + money + "입니다. ");
+		System.out.println(this.studentName + "님의 남은 돈은 " + this.money + "입니다. ");
 	}
 	
 	@Override
@@ -85,15 +85,15 @@ class Bus{
 	public void take(int money) {	// 버스의 수입을 처리, 승객수 처리
 		// 버스를 타면? 승객수 늘어남, 수입 늘어남
 		this.money += money;		//money(버스의 수입)은 들어오는 만큼 늘어남.
-		passenagerCount++;		// 돈이 인풋될수록 승객도 1명씩 늘어남.
+		this.passenagerCount += 1;		// 돈이 인풋될수록 승객도 1명씩 늘어남.
 		
 	}
 	public void takeOff() {		// 승객수만 감소
-		passenagerCount --;
+		this.passenagerCount -= 1;
 	}
 	
 	public void busInfo() {
-		System.out.println("버스 " + busName + "번의 승객은 " + passenagerCount + "명이고 수입은 " + money + "입니다.");
+		System.out.println("버스 " + this.busName + "번의 승객은 " + this.passenagerCount + "명이고 수입은 " + this.money + "입니다.");
 	}
 	
 }
@@ -166,16 +166,18 @@ public class CooperationBetweenObject {
 	Bus bus = new Bus();
 	busN = scanner.nextInt();
 	
-	buses.add(new Bus(busN));
+	bus.setBusName(busN);
 	
-	student.takeBus(bus);
-	System.out.println(sName2 + "님" + busN + "번 버스를 탔습니다. 즐거운 하루 되세요.");
-	student.studentInfo();
-	bus.busInfo();
-	
-	
-	
-	
+	if (searchBus(busN) == null) {
+		System.out.println("선택하신 버스의 정보는 없습니다.");
+	} else {
+		student.takeBus(bus);
+		System.out.println(sName2 + "님" + busN + "번 버스를 탔습니다. 즐거운 하루 되세요.");
+		student.studentInfo();
+		bus.busInfo();
+		
+		
+	}
 	}
 	
 	// 4번 메서드

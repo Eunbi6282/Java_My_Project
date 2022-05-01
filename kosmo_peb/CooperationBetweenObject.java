@@ -55,7 +55,7 @@ class Student{
 	}
 	
 	public void moneyInfo() {
-		System.out.println(studentName+"님의 남은돈은 "+money+"입니다.");
+		System.out.println(this.studentName+"님의 남은돈은 "+this.money+"입니다.");
 	}
 	
 	@Override
@@ -81,14 +81,14 @@ class Bus{
 	public void take(int money) {		//  버스의 수입을 처리, 승객수 처리
 		// 이 money는 버스의 수입,승객을 높여줌
 		this.money+=money;
-		passenagerCount++;
+		this.passenagerCount += 1 ;
 	}
 	
 	public void takeOut(){	// 승객수만 감소
-		this.passenagerCount--;
+		this.passenagerCount -= 1;
 	}
 	public void busInfo() {
-		System.out.println("버스"+busName+"번의 승객은 "+passenagerCount+"명이고 수입은 "+money+"입니다.");
+		System.out.println("버스"+this.busName+"번의 승객은 "+this.passenagerCount+"명이고 수입은 "+this.money+"입니다.");
 	}
 }
 
@@ -126,7 +126,6 @@ class Subway{
 
 public class CooperationBetweenObject {
 	public static ArrayList<Student> students = new ArrayList();
-	private static ArrayList<Bus> busarr = new ArrayList<Bus>();
 	public static Scanner scanner = new Scanner(System.in);
 	static String Sname = null;
 	static int busNum;  // 버스 번호 
@@ -160,16 +159,14 @@ public class CooperationBetweenObject {
 		Student student = searchMethod(Sname);
 		System.out.println("버스번호를 입력하세요 >>> ");
 		busNum = scanner.nextInt();
-		for(Bus bus : busarr) {
+		Bus bus = new Bus();
 			if(bus.busName==busNum) {
 				student.takeBus(bus);
 				System.out.println(student.studentName+"님"+bus.busName+"번 버스를 탔습니다. 즐거운 하루 되세요.");
 				student.moneyInfo();
 				bus.busInfo();
 			}
-		}
 	
-//		Bus bus = new Bus();
 //		student.takeBus(bus);
 //		bus.busName=bus.setBusName(busNum);
 //		System.out.println(student.getStudentName() + "님 " + busNum + " 번 버스를 탔습니다. 즐거운 하루되세요^^");
@@ -183,14 +180,14 @@ public class CooperationBetweenObject {
 		Student student = searchMethod(Sname);
 		System.out.println("버스번호를 입력하세요 >>> ");
 		busNum = scanner.nextInt();
-		for(Bus bus : busarr) {
-			if(bus.busName == busNum) {
-				student.takeOutBus(bus);
-				System.out.println(student.studentName+"님"+bus.busName+"번 버스를 탔습니다. 즐거운 하루 되세요.");
-				student.moneyInfo();
-				bus.busInfo();			
-			}
-		}
+//		for(Bus bus : busarr) {
+//			if(bus.busName == busNum) {
+//				student.takeOutBus(bus);
+//				System.out.println(student.studentName+"님"+bus.busName+"번 버스를 탔습니다. 즐거운 하루 되세요.");
+//				student.moneyInfo();
+//				bus.busInfo();			
+//			}
+//		}
 	}
 	
 	
@@ -209,15 +206,8 @@ public class CooperationBetweenObject {
 		return student;
 	}
 	
-	
 	public static void main(String[] args) {
-		for(int i = 1; i<6; i++) { 		//버스 객체 생성 (선생님이 객체 몇개 생성하고 하라고 하셨습니당)
-										//버스(1~5) 생성
-			Bus b = new Bus();
-			b.setBusName(i);
-			busarr.add(b);
-		}
-		
+	
 		
 		
 		while (true) {
@@ -248,5 +238,6 @@ public class CooperationBetweenObject {
 		System.out.println("프로그램을 종료합니다. ");
 
 	}
+	
+	}
 
-}
