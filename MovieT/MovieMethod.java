@@ -23,7 +23,7 @@ public class MovieMethod implements MovieMgr{
 	// 영화 정보 모두 출력
 	@Override
 	public MovieT[] search() {
-		MovieT[] ms;
+		MovieT[] ms = null;
 //		for (int i = 0; i < index; i++) {
 //			if (movies[i] != null) {
 //				ms[i] = movies[i];
