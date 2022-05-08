@@ -48,12 +48,14 @@ public class MovieInput {
 			// 영화 정보 출력
 			case 2 : 
 				System.out.println(Arrays.toString(movieMethod.search()));
-			
+				break;
 			
 			// 영화 제목으로 영화 찾기
 			case 3:
-				
-			
+				System.out.println("찿을 영화명을 입력하세요 >>> ");
+				String mname = scanner.next();
+				System.out.println(Arrays.toString(movieMethod.search(mname)));
+				break;
 			
 			}
 		}

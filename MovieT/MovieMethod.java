@@ -36,8 +36,20 @@ public class MovieMethod implements MovieMgr{
 	
 	@Override
 	public MovieT[] search(String title) {
-		// TODO Auto-generated method stub
-		return null;
+		// equals()가 아닌 contains()로 키워드가 포함되면 검색에 걸림
+		MovieT[] ms = new MovieT[index];
+		int i = 0; int count = 0;
+		MovieT movieT = searchTitleM(title);
+		for (MovieT m : movies) {
+			if (searchTitleM(title) == null) {
+				System.out.println("입력한 영화 정보는 찾을 수 없습니다.");
+				break;
+			}else if (m.getMovieName().contains(title)) {
+				ms[i++] = m;
+				count++;
+			}
+		}
+		return ms;
 	}
 
 	@Override
@@ -71,6 +83,21 @@ public class MovieMethod implements MovieMgr{
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
+	}
+	
+	// 같은 영화 제목 찾기 메서드
+	public static MovieT searchTitleM(String moviename) {
+		MovieT movietitle = null;
+		for (int i = 0; i < movies.length; i++) {
+			if (movies[i] != null) {
+				String name = movies[i].getMovieName();
+				if (name.equals(moviename)) {
+					movietitle = movies[i];
+					return movietitle;
+				}
+			}
+		}
+		return null;
 	}
 
 	
