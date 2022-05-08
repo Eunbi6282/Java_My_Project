@@ -17,24 +17,18 @@ public class MovieMethod implements MovieMgr{
 	// 영화 정보 추가
 	@Override
 	public void add(MovieT m) {
-			m = movies[index++];
+		movies[index++] = m;
 	}
 	
 	// 영화 정보 모두 출력
 	@Override
 	public MovieT[] search() {
-		MovieT[] ms = null;
-//		for (int i = 0; i < index; i++) {
-//			if (movies[i] != null) {
-//				ms[i] = movies[i];
-//			} 
-//		}
-//		return ms;
-		
-		for (int i = 0; i < ms.length; i++) {
-			
+		MovieT[] ms = new MovieT[index]; //moviet타입의 배열 
+		for (int i = 0; i < index; i++) {
+			if (movies[i] != null) {
+				ms[i] = movies[i];
+			} 
 		}
-
 		return ms;
 	}
 
